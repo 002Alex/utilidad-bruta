@@ -11,23 +11,23 @@
 
 ### 1. Clonar el repositorio
 
-git clone https://github.com/002Alex/utilidad-bruta
-cd utilidad-bruta si usa terminal o abrir su editor de código prefererido
+-   git clone https://github.com/002Alex/utilidad-bruta
+-   cd utilidad-bruta
 
 ### 2. Instalar dependencias
 
-composer install
-npm install && npm run build
+-   composer install
+-   npm install && npm run build
 
 ### 3. Configurar variables de entorno
 
-cp .env.example .env
-php artisan key:generate
+-   cp .env.example .env
+-   php artisan key:generate
 
 ### 4. Configurar la base de datos
 
-Por defecto, el proyecto usa SQLite. Solo necesitas asegurar que existe la carpeta 'database//database.sqlite' o
-sino crearla desde bash 'touch database/database.sqlite'
+-   Por defecto, el proyecto usa SQLite. Solo necesitas asegurar que existe la carpeta 'database//database.sqlite' o
+-   sino crearla desde bash 'touch database/database.sqlite'
 
 -   Editar .env con tus credenciales de BD si desea usar otra BD
 
