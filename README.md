@@ -11,7 +11,7 @@
 
 ### 1. Clonar el repositorio
 
-git clone [tu-repositorio]
+git clone git@github.com:002Alex/utilidad-bruta.git
 cd utilidad-bruta si usa terminal o abrir su editor de código prefererido
 
 ### 2. Instalar dependencias
