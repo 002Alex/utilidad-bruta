@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class UpdateExpenseRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'provider_id' => 'required|exists:providers,id',
+            'amount' => 'required|numeric|min:0',
+            'concept' => 'required|string|max:255',
+            'date' => 'required|date',
+            'description' => 'nullable|string',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'provider_id.required' => 'El proveedor es obligatorio',
+            'provider_id.exists' => 'El proveedor seleccionado no existe',
+            'amount.required' => 'El monto es obligatorio',
+            'amount.numeric' => 'El monto debe ser un número',
+            'amount.min' => 'El monto debe ser mayor o igual a 0',
+            'concept.required' => 'El concepto es obligatorio',
+            'date.required' => 'La fecha es obligatoria',
+            'date.date' => 'La fecha debe ser válida',
+        ];
+    }
+}
